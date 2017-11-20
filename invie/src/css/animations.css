@@ -1,0 +1,249 @@
+.flicker {
+
+}
+
+.flicker-enter {
+  animation-duration: .5s, .7s;
+  animation-name: flicker, shake;
+  animation-timing-function: linear, ease-in-out;
+}
+
+.flicker-enter-active {
+
+}
+
+.flicker-leave {
+  animation-duration: .5s, .7s;
+  animation-name: flicker, shake;
+  animation-timing-function: linear, ease-in-out;
+}
+
+.flicker-leave-active {
+
+}
+
+
+@keyframes flicker {
+  from {
+    opacity: 0.5;
+    transform: rotateY(0);
+  }
+  4% {
+    opacity: .5;
+  }
+  6% {
+    opacity: .45;
+  }
+  8% {
+    opacity: .55;
+  }
+  10% {
+    opacity: .45;
+  }
+  11% {
+    opacity: .5;
+  }
+  12% {
+    opacity: .65;
+  }
+  14% {
+    opacity: .55;
+  }
+  16% {
+    opacity: .70;
+  }
+  17% {
+    opacity: .55;
+  }
+  19% {
+    opacity: .5;
+  }
+  20% {
+    opacity: .5;
+  }
+  24% {
+    opacity: .5;
+  }
+  26% {
+    opacity: .69;
+  }
+  28% {
+    opacity: .5;
+  }
+  38% {
+    opacity: .45;
+  }
+  40% {
+    opacity: .5;
+  }
+  42% {
+    opacity: .6;
+  }
+  44% {
+    opacity: .5;
+  }
+  46% {
+    opacity: .5;
+  }
+  56% {
+    opacity: .5;
+  }
+  58% {
+    opacity: .75;
+  }
+  60% {
+    opacity: .5;
+  }
+  68% {
+    opacity: .5;
+  }
+  70% {
+    opacity: .6;
+  }
+  72% {
+    opacity: .5;
+  }
+  93% {
+    opacity: .5;
+  }
+  95% {
+    opacity: .6;
+  }
+  97% {
+    opacity: .5;
+  }
+  to {
+    opacity: .5;
+    transform: rotateY(360deg);
+
+  }
+
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translateX(-1px);
+  }
+  20%, 80% {
+    transform: translateX(2px);
+  }
+
+  30% , 50%, 70%{
+    transform: translateX(-4px);
+  }
+  40%, 60% {
+    transform: translateX(4px);
+  }
+}
+
+
+.fade {
+
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(.5);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s;
+}
+
+.fade-leave {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-leave-active {
+  opacity: 0;
+  transform: scale(.5);
+  transition: .3s;
+}
+
+/*animation: animationOut .8s forwards;*/
+.animationInOut-enter {
+  animation: animationIn .8s;
+}
+
+.animationInOut-leave {
+  animation: animationOut .8s;
+}
+
+@keyframes animationIn {
+  0% {
+    transform: translateY(-3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes animationOut {
+  0% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-3000px);
+  }
+}
+
+
+.like {
+  cursor: pointer;
+  /*width: 100px;
+  height: 100px;*/
+  width: 50px;
+  height: 50px;
+  background-image: url('../images/corazon.png');
+  /*background-size: x y;*/
+  background-size: 1450px 50px;
+  /*background: red;*/
+  bottom: -100px;
+  position: fixed;
+}
+.like.is-liked {
+  animation-name: like, move;
+  /*animation-duration: 800ms;*/
+  animation-duration: .8s, 5s;
+  /*2900 / 29 = 100px*/
+  animation-timing-function: steps(28), linear;
+  /*background-position: -2800px 0;*/
+  /*background-position: right;*/
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite, 1;
+}
+@keyframes like {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: right;
+    /*background-position: -2800px 0;*/
+  }
+}
+
+@keyframes move {
+  from {
+    position: absolute;
+    bottom: 0;
+  }
+  to {
+    position: absolute;
+    bottom: 110%;
+  }
+}
