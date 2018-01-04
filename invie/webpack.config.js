@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
   const plugins = [
@@ -10,7 +10,13 @@ module.exports = (env) => {
 
   if (env.NODE_ENV === 'production') {
     plugins.push(
-      new CleanWebpackPlugin(['dist'], {root: __dirname})
+      new CleanWebpackPlugin(['dist'], {root: __dirname}),
+      new HtmlWebpackPlugin({
+        title: 'React App',
+        template: './templates/index.tmpl.html',
+        inject: true,
+        xhtml: true
+      })
     )
   }
 
